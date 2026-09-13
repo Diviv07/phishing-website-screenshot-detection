@@ -31,28 +31,33 @@ Traditional URL-based detection methods may not always identify visually decepti
 
 ## Main Features
 
-1. **Image Preprocessing**
-   - Loads website screenshots.
-   - Resizes images to a fixed size.
-   - Converts images to grayscale.
-   - Normalizes image values.
+### 1. Image Preprocessing
 
-2. **HOG Feature Extraction**
-   - Extracts Histogram of Oriented Gradients features.
-   - Represents visual structures and edge information numerically.
+- Loads website screenshots.
+- Resizes images to a fixed size.
+- Converts images to grayscale.
+- Normalizes image values.
 
-3. **SVM Classification**
-   - Uses a Support Vector Machine with an RBF kernel.
-   - Uses balanced class weights to handle class imbalance.
+### 2. HOG Feature Extraction
 
-4. **Model Evaluation**
-   - Calculates accuracy, precision, recall and F1-score.
-   - Generates a confusion matrix.
+- Extracts Histogram of Oriented Gradients features.
+- Represents visual structures and edge information numerically.
 
-5. **Command-Line Prediction**
-   - Accepts a website screenshot as input.
-   - Predicts whether it is legitimate or phishing.
-   - Displays prediction confidence.
+### 3. SVM Classification
+
+- Uses a Support Vector Machine with an RBF kernel.
+- Uses balanced class weights to handle class imbalance.
+
+### 4. Model Evaluation
+
+- Calculates accuracy, precision, recall and F1-score.
+- Generates a confusion matrix.
+
+### 5. Command-Line Prediction
+
+- Accepts a website screenshot as input.
+- Predicts whether it is legitimate or phishing.
+- Displays prediction confidence.
 
 ---
 
@@ -94,23 +99,11 @@ The dataset contains screenshots belonging to two classes:
 
 The dataset is not included in this GitHub repository because of its large size.
 
----
+### Dataset Setup
 
-## Project Workflow
+After downloading the dataset, organize the images in the following structure:
 
 ```text
-Website Screenshot
-        ↓
-Image Preprocessing
-        ↓
-Resize + Grayscale + Normalization
-        ↓
-HOG Feature Extraction
-        ↓
-SVM Classifier
-        ↓
-Prediction
-        ↓
-Legitimate / Phishing
-        ↓
-Confidence Score
+dataset/
+├── legitimate/
+└── phishing/
