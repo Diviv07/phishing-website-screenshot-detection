@@ -1,63 +1,116 @@
 # AI-Based Phishing Website Screenshot Detection Using Computer Vision
 
-## 1. Project Overview
+## Project Overview
 
-This project detects whether a website screenshot is likely to be a legitimate website or a phishing website using computer vision and machine learning.
+This project presents an AI-based computer vision system for detecting whether a website screenshot is **legitimate** or **phishing**.
 
-The system takes a website screenshot as input, preprocesses the image, extracts visual features using Histogram of Oriented Gradients (HOG), and classifies the screenshot using a Support Vector Machine (SVM).
+The system processes website screenshots, extracts visual features using **Histogram of Oriented Gradients (HOG)**, and uses a **Support Vector Machine (SVM)** classifier to predict the class of the website.
 
-## 2. Problem Statement
+The project is designed as a lightweight, CPU-friendly command-line application.
 
-Phishing websites are designed to visually imitate legitimate websites and trick users into entering sensitive information. Traditional detection methods may depend on URLs or manually maintained lists.
+---
 
-This project explores a computer-vision-based approach that analyzes the visual appearance of a website screenshot to classify it as legitimate or phishing.
+## Problem Statement
 
-## 3. Objectives
+Phishing websites are designed to imitate legitimate websites and deceive users into entering sensitive information such as usernames, passwords and financial details.
 
-- Detect phishing websites from screenshots.
-- Apply computer vision techniques for visual feature extraction.
-- Use HOG features to represent website screenshots.
+Traditional URL-based detection methods may not always identify visually deceptive websites. This project explores a computer vision-based approach that analyzes the visual appearance of website screenshots to classify them as legitimate or phishing.
+
+---
+
+## Objectives
+
+- Detect phishing websites using website screenshots.
+- Apply image preprocessing techniques to standardize input images.
+- Extract visual features using HOG.
 - Train an SVM-based machine learning classifier.
+- Evaluate the classification performance using standard metrics.
 - Provide a simple command-line interface for prediction.
-- Evaluate the model using accuracy, precision, recall and F1-score.
 
-## 4. Main Features
+---
 
-- Website screenshot preprocessing
-- HOG feature extraction
-- SVM-based classification
-- Legitimate/phishing prediction
-- Prediction confidence
-- Model evaluation
-- Automated preprocessing test
-- CSV-based evaluation results
+## Main Features
 
-## 5. Technologies Used
+1. **Image Preprocessing**
+   - Loads website screenshots.
+   - Resizes images to a fixed size.
+   - Converts images to grayscale.
+   - Normalizes image values.
 
-- Python 3.12
+2. **HOG Feature Extraction**
+   - Extracts Histogram of Oriented Gradients features.
+   - Represents visual structures and edge information numerically.
+
+3. **SVM Classification**
+   - Uses a Support Vector Machine with an RBF kernel.
+   - Uses balanced class weights to handle class imbalance.
+
+4. **Model Evaluation**
+   - Calculates accuracy, precision, recall and F1-score.
+   - Generates a confusion matrix.
+
+5. **Command-Line Prediction**
+   - Accepts a website screenshot as input.
+   - Predicts whether it is legitimate or phishing.
+   - Displays prediction confidence.
+
+---
+
+## Technologies Used
+
+- Python
 - OpenCV
 - NumPy
 - Scikit-image
 - Scikit-learn
 - Joblib
+- Matplotlib
+- Seaborn
 - Pytest
+- Git and GitHub
 
-## 6. System Workflow
+---
+
+## Dataset
+
+The project uses the **Phishing Sites Screenshot** dataset available on Kaggle.
+
+Dataset source:
+
+https://www.kaggle.com/datasets/zackyzac/phishing-sites-screenshot
+
+The dataset contains screenshots belonging to two classes:
+
+- `legitimate`
+- `phishing`
+
+### Dataset Distribution
+
+| Class | Number of Images |
+|---|---:|
+| Legitimate | 1,147 |
+| Phishing | 550 |
+| Total | 1,697 |
+
+The dataset is not included in this GitHub repository because of its large size.
+
+---
+
+## Project Workflow
 
 ```text
 Website Screenshot
-        |
-        v
+        ↓
 Image Preprocessing
-        |
-        v
+        ↓
+Resize + Grayscale + Normalization
+        ↓
 HOG Feature Extraction
-        |
-        v
+        ↓
 SVM Classifier
-        |
-        v
+        ↓
+Prediction
+        ↓
 Legitimate / Phishing
-        |
-        v
-Prediction Confidence
+        ↓
+Confidence Score
