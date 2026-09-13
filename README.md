@@ -107,3 +107,23 @@ After downloading the dataset, organize the images in the following structure:
 dataset/
 ├── legitimate/
 └── phishing/
+---
+
+## Project Workflow
+
+```text
+Website Screenshot
+        ↓
+Image Preprocessing
+        ↓
+Resize + Grayscale + Normalization
+        ↓
+HOG Feature Extraction
+        ↓
+SVM Classifier
+        ↓
+Prediction
+        ↓
+Legitimate / Phishing
+        ↓
+Confidence Score
